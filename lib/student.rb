@@ -89,7 +89,6 @@ class Student
       DB[:conn].execute(sql, num_students) do |student|
     first_x_students << self.new_from_db(student)
     end
-    first_x_students
   end 
 
   def save
