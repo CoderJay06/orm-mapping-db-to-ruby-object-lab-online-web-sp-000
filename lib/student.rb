@@ -74,7 +74,6 @@ class Student
     # first_x_students 
     sql = <<-SQL
       SELECT * FROM students
-<<<<<<< HEAD
       WHERE grade = 10 
       LIMIT ?
     SQL
@@ -83,6 +82,17 @@ class Student
       DB[:conn].execute(sql, num_students) do |student|
     first_x_students << self.new_from_db(student)
     end
+    first_x_students
+  end 
+  
+  def self.first_X_students_in_grade_10
+    sql = <<-SQL 
+      SELECT * FROM students 
+      WHERE grade = 10 
+      LIMIT 1 
+    SQL
+    
+    DB[:conn].execute(sql)
   end 
 
   def save
