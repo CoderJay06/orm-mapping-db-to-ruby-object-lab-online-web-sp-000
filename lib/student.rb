@@ -88,7 +88,6 @@ class Student
     first_x_students = []
       DB[:conn].execute(sql, num_students) do |student|
     first_x_students << self.new_from_db(student)
->>>>>>> 05eef9f091e335c7d565978b6e535b3ecc3d78d8
     end
     first_x_students
   end 
