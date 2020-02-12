@@ -80,12 +80,6 @@ class Student
     SQL
     
     first_x_students = []
-      DB[:conn].execute(sql, num_students).each do |student|
-      first_x_students << self.new_from_db(student)
-=======
-      WHERE students.grade = 10 
-    SQL
-    first_x_students = []
       DB[:conn].execute(sql, num_students) do |student|
     first_x_students << self.new_from_db(student)
     end
